@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Немецкий язык</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        /* Подменю */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: #444;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 8px 12px;
+            display: block;
+            white-space: nowrap;
+        }
+
+        /* Кнопка "Добавить слово" */
+        .add-word {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .add-word:hover {
+            background-color: #e68a00;
+        }
+
+        /* Поле поиска */
+        .search-box {
+            background-color: #444;
+            border: none;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+/* Стили для таблицы */
+table {
+    width: 90%; /* Увеличиваем ширину таблицы */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #ddd;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 15px;
+    text-align: center;
+}
+
+        /* Стили для цветов артиклей */
+        .der { color: blue; }
+        .die { color: #800020; }
+        .das { color: green; }
+        .plural { color: #cc8400; }
+
+        /* Стили для цветных квадратиков */
+        .color-box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 3px;
+            border: 1px solid #999;
+        }
+
+        .color-der { background-color: blue; }
+        .color-die { background-color: #800020; }
+        .color-das { background-color: green; }
+        .color-plural { background-color: #cc8400; }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Das ist ein Deutschkurs!</div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li>
+                    <a href="#">Словарь</a>
+                    <ul>
+                        <li><a href="#">Существительные</a></li>
+                        <li><a href="#">Глаголы</a></li>
+                        <li><a href="#">Местоимения</a></li>
+                        <li><a href="#">Предлоги</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Грамматика</a></li>
+                <li><a href="#">Другое</a></li>
+                <li><a href="#" class="add-word">Добавить слово</a></li>
+                <li>
+                    <input type="text" class="search-box" placeholder="Поиск...">
+                </li>
+            </ul>
+        </nav>
+    </header>    
+    <main>
+        <section class="word-list">
+            <h2>Список существительных</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Артикль</th>
+                        <th>Слово</th>
+                        <th>Цвет</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="der">der</td>
+                        <td class="der">Tisch</td>
+                        <td><span class="color-box color-der"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="die">die</td>
+                        <td class="die">Lampe</td>
+                        <td><span class="color-box color-die"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="das">das</td>
+                        <td class="das">Haus</td>
+                        <td><span class="color-box color-das"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="plural">Plural</td>
+                        <td class="plural">Autos</td>
+                        <td><span class="color-box color-plural"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Немецкий язык</p>
+    </footer>
+</body>
+</html>
